@@ -20,7 +20,7 @@ create table tb_anuncio(
     ds_valor        decimal (10,2),
     ds_tipo         varchar (50),
     ds_descricao    varchar (500),
-    img_anuncio     varchar(800),
+    img_anuncio     varchar (800),
     FOREIGN KEY (id_usuario) REFERENCES tb_usuario (id_usuario)
 );
 

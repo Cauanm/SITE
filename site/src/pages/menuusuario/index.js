@@ -2,7 +2,7 @@ import storage from 'local-storage'
 import { Link , useNavigate} from "react-router-dom"
 import './index.scss'
 import  { useEffect, useState } from 'react';
-import { listarAnuncioId } from '../../api/anuncio.js'
+import { listarAnuncioId, buscarImagem } from '../../api/anuncio.js'
 
 
 
@@ -41,7 +41,7 @@ export default function Index (){
     useEffect(() => {
         const usuarioLogado = storage('usuario-logado')
         carregaranuncios(usuarioLogado.id)
-    },[])
+    },[]);
 
 
     return(
@@ -78,7 +78,7 @@ export default function Index (){
         <div className="faixa-1">
         {anuncio.map(item => 
             <div className="anuncio">
-            <img className="imag" src={item.imagem} alt=""/>
+            <img className="imag" src={buscarImagem(item.imagem)} alt=""/>
             <div className="ali">
             <div className="quad">
                 <p> Preço: <br/>

@@ -8,7 +8,6 @@ anuncio.id = resposta.insertId
 return anuncio
 }
 
-
 export async function alteraranuncio (id , anuncio){
 const comando =`
 update tb_anuncio
@@ -32,7 +31,7 @@ export async function removeranuncio(id) {
     return resposta.affectedRows;
 }
 
-export async function buscarporid ( id ){
+export async function buscarporid (id) {
     const comando = `
     SELECT  id_anuncio			id,
 	        nm_anuncio			nome,
@@ -91,5 +90,4 @@ export async function alterarimagem (imagem , id){
     const [resposta] = await con.query (comando, [imagem , id])
     return resposta.affectedRows;
 }
-
 

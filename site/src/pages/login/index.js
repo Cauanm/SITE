@@ -28,6 +28,7 @@ async function entrarclick(){
     }catch (err) {
         if(err.response.status === 401){
             seterro(err.response.data.erro)
+            alert('Seu login deu erro, tente novamente al')
         }
     }
 }

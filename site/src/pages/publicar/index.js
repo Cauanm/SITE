@@ -26,6 +26,7 @@ if(idParam){
 
 },[])
 
+console.log(image)
 
  async function carregaranuncios (){
 const resposta = await buscarPorId(idParam)
@@ -49,7 +50,7 @@ async function salvarclick(){
         const anuncio = await novoanuncio(usuario , nome, valor , tipo , contato , descricao )
         await enviarimage(anuncio.id , image)
         setid(anuncio.id)       
-        alert('anuncio publicado') 
+        alert('Anuncio publicado') 
         }else{
             await alteraranuncio(usuario , nome, valor , tipo , contato , descricao)
             if(typeof(image) == 'object')

@@ -1,5 +1,5 @@
-import { alteraranuncio, inseriranuncio, removeranuncio , alterarimagem, buscarporid, buscarportipo ,buscarporidanuncio} from "../repositori/anunciorepositori.js";
-import { Router } from "express";
+import { alteraranuncio, inseriranuncio, removeranuncio, alterarimagem, buscarporid, buscarportipo, buscarporidanuncio} from "../repositori/anunciorepositori.js";
+import { Router } from "express"
 import multer from 'multer'
 
 const server= Router()
@@ -137,8 +137,8 @@ server.get ('/anuncio/tipo/:tipo', async (req,resp) => {
 
 server.put ('/anuncio/:id/capa', upload.single('capa') , async (req,resp) => {
     try {
-        const { id } = req.params
         const imagem = req.file.path
+        const { id } = req.params
 
         const resposta = await alterarimagem( imagem , id )
         if(resposta != 1)
